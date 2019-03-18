@@ -18,28 +18,40 @@ const Incident = {
 
 export function listAll() {
     return dispatch => Incident.all().then(payload => {
-        if(payload.errors) return dispatch({"type": API_ERROR, "payload": payload.errors});
+        if(payload.errors) {
+            dispatch({"type": API_ERROR, "payload": payload.errors});
+            throw new Error("API error: " + payload.errors.join("\n"));
+        }
         return dispatch({"type": INCIDENT_LIST, "payload": payload.data});
     });
 }
 
 export function newModel(data) {
     return dispatch => Incident.create(data).then(payload => {
-        if(payload.errors) return dispatch({"type": API_ERROR, "payload": payload.errors});
+        if(payload.errors) {
+            dispatch({"type": API_ERROR, "payload": payload.errors});
+            throw new Error("API error: " + payload.errors.join("\n"));
+        }
         return dispatch({"type": INCIDENT_CREATED, "payload": payload.data});
     });
 }
 
 export function editModel(data) {
     return dispatch => Incident.update(data).then(payload => {
-        if(payload.errors) return dispatch({"type": API_ERROR, "payload": payload.errors});
+        if(payload.errors) {
+            dispatch({"type": API_ERROR, "payload": payload.errors});
+            throw new Error("API error: " + payload.errors.join("\n"));
+        }
         return dispatch({"type": INCIDENT_UPDATED, "payload": payload.data});
     });
 }
 
 export function deleteModel(data) {
     return dispatch => Incident.del(data.id).then(payload => {
-        if(payload.errors) return dispatch({"type": API_ERROR, "payload": payload.errors});
+        if(payload.errors) {
+            dispatch({"type": API_ERROR, "payload": payload.errors});
+            throw new Error("API error: " + payload.errors.join("\n"));
+        }
         return dispatch({"type": INCIDENT_DELETED, "payload": payload.data});
     });
 }

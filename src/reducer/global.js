@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
         };
         case DISMISS_ALERT: return {
             ...state,
-            "errors": [...state.errors].filter((v,i) => i == action.payload)
+            "errors": [...state.errors].filter((v,i) => i !== action.payload)
         };
         default: return state;
     }

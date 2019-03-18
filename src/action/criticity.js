@@ -11,7 +11,10 @@ const Criticity = {
 
 export function listAll() {
     return dispatch => Criticity.all().then(payload => {
-        if(payload.errors) return dispatch({"type": API_ERROR, "payload": payload.errors});
+        if(payload.errors) {
+            dispatch({"type": API_ERROR, "payload": payload.errors});
+            throw new Error("API error: " + payload.errors.join("\n"));
+        }
         return dispatch({"type": CRITICITY_LIST, "payload": payload.data});
     });
 }

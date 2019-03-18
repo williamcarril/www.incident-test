@@ -13,9 +13,9 @@ export default class ErrorList extends Component {
 
       <div id="errors">
         {(this.props.items || []).map((el, i) => (
-            <div key={i} className="alert alert-warning alert-dismissible fade show" role="alert">
+            <div key={i} className="alert alert-warning" role="alert">
               {el}
-              <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.handleAlertDismiss(i).bind(this)}>
+              <button type="button" className="close" aria-label="Close" onClick={this.handleAlertDismiss(i).bind(this)}>
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
