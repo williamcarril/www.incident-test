@@ -12,3 +12,5 @@ Feito isso, inicie o shell de seu sistema dentro do diretório deste projeto e e
 Observação: o webserver usará a porta 8081 de sua máquina. Então certifique-se que tal porta esteja livre.
 
 Após isso, já é possível acessar a interface através do endereço http://127.0.0.1:8081.
+
+Observação2: certifique-se que a API do CRUD de incidentes (https://github.com/williamcarril/api.incident-test) esteja acessível em http://127.0.0.1:8080.
