@@ -34,7 +34,7 @@ export default class List extends Component {
                 <td>{el.criticity ? el.criticity.name : ""}</td>
                 <td>{el.type.name}</td>
                 <td>{el.status.name}</td>
-                <td><Link className="fa fa-edit btn btn-primary" to={`/edit/${el.id}`}></Link><button className="fa fa-trash btn btn-danger" onClick={this.handleModelDeletion(el).bind(this)}></button></td>
+                <td><Link className="fa fa-edit btn btn-primary" to={`/edit/${el.id}`}></Link><button type="button" className="fa fa-trash btn btn-danger" onClick={this.handleModelDeletion(el).bind(this)}></button></td>
               </tr>
             ))}
           </tbody>

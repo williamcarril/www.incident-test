@@ -52,6 +52,6 @@ export function deleteModel(data) {
             dispatch({"type": API_ERROR, "payload": payload.errors});
             throw new Error("API error: " + payload.errors.join("\n"));
         }
-        return dispatch({"type": INCIDENT_DELETED, "payload": payload.data});
+        return dispatch({"type": INCIDENT_DELETED, "payload": data});
     });
 }
