@@ -1,3 +1,11 @@
 export const INCIDENT_LIST = "INCIDENT_LIST";
+export const INCIDENT_CREATED = "INCIDENT_CREATED";
+export const INCIDENT_UPDATED = "INCIDENT_UPDATED";
+export const INCIDENT_DELETED = "INCIDENT_DELETED";
 
-export const FETCH_ERROR = "FETCH_ERROR";
+export const CRITICITY_LIST = "CRITICITY_LIST";
+export const TYPE_LIST = "TYPE_LIST";
+export const STATUS_LIST = "STATUS_LIST";
+
+export const API_ERROR = "API_ERROR";
+export const DISMISS_ALERT = "DISMISS_ALERT";
